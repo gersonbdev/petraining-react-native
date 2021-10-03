@@ -1,25 +1,21 @@
 import * as React from 'react';
-import { Avatar, BottomNavigation, Text } from 'react-native-paper';
-// import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
-const MusicRoute = () => <Text>Music</Text>;
-
-const AlbumsRoute = () => <Avatar.Image size={192} source={require('../assets/img/profile/profile-avatar.jpg')} />;
-
-const RecentsRoute = () => <Text>Recents</Text>;
+import { BottomNavigation, Text } from 'react-native-paper';
+import { HealthScreen } from '../screens/HealthScreen';
+import { HomeScreen } from '../screens/HomeScreen';
+import { DispensedScreen } from '../screens/DispensedScreen';
 
 const PtBottomNavigation = () => {
   const [index, setIndex] = React.useState(1);
   const [routes] = React.useState([
-    { key: 'music', title: 'Salud', icon: 'dog' },
-    { key: 'albums', title: 'Inicio', icon: 'home' },
-    { key: 'recents', title: 'Dispensado', icon: 'alarm-check' },
+    { key: 'health', title: 'Salud', icon: 'dog' },
+    { key: 'home', title: 'Inicio', icon: 'home' },
+    { key: 'dispensed', title: 'Dispensado', icon: 'alarm-check' },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    music: MusicRoute,
-    albums: AlbumsRoute,
-    recents: RecentsRoute,
+    health: HealthScreen,
+    home: HomeScreen,
+    dispensed: DispensedScreen,
   });
 
   return (
