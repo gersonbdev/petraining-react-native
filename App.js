@@ -11,6 +11,7 @@ const theme = {
     // Orange 500
     primary: '#ff9800',
     accent: '#c66900',
+    background: '#ffffec',
   },
 };
 
